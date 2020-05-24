@@ -18,6 +18,8 @@ namespace SimpleBrokeredMessaging.Receiver
         static async Task Main(string[] args)
         {
             await RecreateQueueAsync();
+            //Queue message is received in the same order it was sent when single thread
+            //If multithread is setup, no order is guaranteed.
             ReceiveAndProcessPizzaOrders(1);
             Console.ReadLine();
         }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.MessageEntities", "SimpleBrokeredMessaging.MessageEntities\SimpleBrokeredMessaging.MessageEntities.csproj", "{418A2D16-2307-4C61-B91F-0D4424180CE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopicsAndSubscriptionsApp", "TopicsAndSubscriptionsApp\TopicsAndSubscriptionsApp.csproj", "{6C0A0F44-0CE7-40D6-B946-A04715F51E77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
