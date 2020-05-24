@@ -32,23 +32,6 @@ namespace SimpleBrokeredMessaging.Sender
             Console.ReadLine();
         }
 
-        //static async Task SendMessageAsync(int numberOfMessagesToSend)
-        //{
-        //    try
-        //    {
-        //        for (int i = 0; i < numberOfMessagesToSend; i++)
-        //        {
-        //            string messageBody = $"Message {i}";
-        //            Message message = new Message(Encoding.UTF8.GetBytes(messageBody));
-        //            await queueClient.SendAsync(message);
-        //        }
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-        //    }
-        //}
-
         static async Task RecreateQueueAsync()
         {
             var managementClient = new ManagementClient(Settings.ConnectionString);

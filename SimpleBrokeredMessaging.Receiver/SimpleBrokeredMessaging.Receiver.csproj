@@ -10,4 +10,9 @@
     <PackageReference Include="WindowsAzure.ServiceBus" Version="6.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleBrokeredMessaging.Config\SimpleBrokeredMessaging.Config.csproj" />
+    <ProjectReference Include="..\SimpleBrokeredMessaging.MessageEntities\SimpleBrokeredMessaging.MessageEntities.csproj" />
+  </ItemGroup>
+
 </Project>
