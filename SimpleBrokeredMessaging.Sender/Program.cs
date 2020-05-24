@@ -1,42 +1,125 @@
 ﻿using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Management;
+using Newtonsoft.Json;
+using SimpleBrokeredMessaging.Config;
+using SimpleBrokeredMessaging.MessageEntities;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace SimpleBrokeredMessaging.Sender
 {
     class Program
     {
-        const string ServiceBusConnectionString = "Endpoint=sb://bg-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=6nOVJ88EooxWmlHVL/lF4dF86mBmMHgSvPg+jxRamTk=";
-        const string QueueName = "";
-        static IQueueClient queueClient;
-
         static async Task Main(string[] args)
         {
-            const int numberOfMessages = 10;
-            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+            WriteLine("Sender Console - Hit enter", ConsoleColor.White);
+            Console.ReadLine();
 
-            await SendMessageAsync(numberOfMessages);
-            Console.ReadKey();
-            await queueClient.CloseAsync();
+            await RecreateQueueAsync();
+            
+            
+            //Send a list of messages to a queue
+            //await SendPizzaOrderList();
+
+            //A queue is a point to point messaging queue
+            //await SendTextString("The is a test message");
+            WriteLine("Sender Console - Complete", ConsoleColor.White);
+            Console.ReadLine();
         }
 
-        static async Task SendMessageAsync(int numberOfMessagesToSend)
+        //static async Task SendMessageAsync(int numberOfMessagesToSend)
+        //{
+        //    try
+        //    {
+        //        for (int i = 0; i < numberOfMessagesToSend; i++)
+        //        {
+        //            string messageBody = $"Message {i}";
+        //            Message message = new Message(Encoding.UTF8.GetBytes(messageBody));
+        //            await queueClient.SendAsync(message);
+        //        }
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
+        //    }
+        //}
+
+        static async Task RecreateQueueAsync()
         {
-            try
+            var managementClient = new ManagementClient(Settings.ConnectionString);
+            if (!await managementClient.QueueExistsAsync(Settings.QueueName))
             {
-                for (int i = 0; i < numberOfMessagesToSend; i++)
+                await managementClient.CreateQueueAsync(Settings.QueueName);
+            }
+        }
+
+        static async Task SendTextString(string text)
+        {
+            WriteLine("SendTextStringAsMessage", ConsoleColor.Cyan);
+            var client = new QueueClient(Settings.ConnectionString, Settings.QueueName);
+
+            Message message = new Message(Encoding.UTF8.GetBytes(text));
+            await client.SendAsync(message);
+            WriteLine("Done!", ConsoleColor.Green);
+            Console.WriteLine();
+            await client.CloseAsync();
+        }
+
+        static async Task SendPizzaOrderList()
+        {
+            var client = new QueueClient(Settings.ConnectionString, Settings.QueueName);
+            var pizzaOrderList = GetPizzaOrderList();
+            WriteLine("Sending...", ConsoleColor.Yellow);
+            foreach (var pizzaOrder in pizzaOrderList.Take(2))
+            {
+                var jsonPizzaOrder = JsonConvert.SerializeObject(pizzaOrder);
+
+                var message = new Message(Encoding.UTF8.GetBytes(jsonPizzaOrder))
                 {
-                    string messageBody = $"Message {i}";
-                    Message message = new Message(Encoding.UTF8.GetBytes(messageBody));
-                    await queueClient.SendAsync(message);
+                    Label = "PizzaOrder",
+                    ContentType = "application/json"
+                };
+
+                message.UserProperties.Add("SystemId", 123);
+
+                await client.SendAsync(message);
+            }
+            WriteLine($"Sent {pizzaOrderList.Count} orders!", ConsoleColor.White);
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+
+        static void WriteLine(string message, ConsoleColor consoleColor)
+        {
+            Console.ForegroundColor = consoleColor;
+            Console.WriteLine(message);
+        }
+
+        static List<PizzaOrder> GetPizzaOrderList()
+        {
+            string[] names = { "Alan", "Jennifer", "James" };
+            string[] pizzas = { "Huawaiian", "Vegetarian", "Capricciosa", "Napolitana" };
+            var pizzaOrderList = new List<PizzaOrder>();
+            foreach (var name in names)
+            {
+                foreach (var pizza in pizzas)
+                {
+                    PizzaOrder pizzaOrder = new PizzaOrder
+                    {
+                        CustomerName = name,
+                        Type = pizza,
+                        Size = "Large"
+                    };
+                    pizzaOrderList.Add(pizzaOrder);
                 }
             }
-            catch (Exception exception)
-            {
-                Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-            }
+
+            return pizzaOrderList;
         }
     }
 }

@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.Rec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.ConsoleApp", "SimpleBrokeredMessaging.ConsoleApp\SimpleBrokeredMessaging.ConsoleApp.csproj", "{8FA94C5C-3BB4-4B0F-BB49-C8E5C989EF0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.Config", "SimpleBrokeredMessaging.Config\SimpleBrokeredMessaging.Config.csproj", "{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.MessageEntities", "SimpleBrokeredMessaging.MessageEntities\SimpleBrokeredMessaging.MessageEntities.csproj", "{418A2D16-2307-4C61-B91F-0D4424180CE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8FA94C5C-3BB4-4B0F-BB49-C8E5C989EF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA94C5C-3BB4-4B0F-BB49-C8E5C989EF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA94C5C-3BB4-4B0F-BB49-C8E5C989EF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418A2D16-2307-4C61-B91F-0D4424180CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
