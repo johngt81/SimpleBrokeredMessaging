@@ -30,7 +30,7 @@ namespace TopicsAndSubscriptionsApp
             message.UserProperties.Add("items", order.Items);
             message.UserProperties.Add("value", order.Value);
             message.UserProperties.Add("loyalty", order.HasLoyaltyCard);
-
+            
             message.CorrelationId = order.Region;
             await TopicClient.SendAsync(message);
         }

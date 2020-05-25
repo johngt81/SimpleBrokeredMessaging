@@ -7,13 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.Sen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.Receiver", "SimpleBrokeredMessaging.Receiver\SimpleBrokeredMessaging.Receiver.csproj", "{85677314-4A4E-4331-B0E6-5A637BCC4403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.ConsoleApp", "SimpleBrokeredMessaging.ConsoleApp\SimpleBrokeredMessaging.ConsoleApp.csproj", "{8FA94C5C-3BB4-4B0F-BB49-C8E5C989EF0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.ConsoleApp", "SimpleBrokeredMessaging.ConsoleApp\SimpleBrokeredMessaging.ConsoleApp.csproj", "{8FA94C5C-3BB4-4B0F-BB49-C8E5C989EF0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.Config", "SimpleBrokeredMessaging.Config\SimpleBrokeredMessaging.Config.csproj", "{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.Config", "SimpleBrokeredMessaging.Config\SimpleBrokeredMessaging.Config.csproj", "{1EA611F8-1AA3-45C5-B3C8-5ED29067DA6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.MessageEntities", "SimpleBrokeredMessaging.MessageEntities\SimpleBrokeredMessaging.MessageEntities.csproj", "{418A2D16-2307-4C61-B91F-0D4424180CE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.MessageEntities", "SimpleBrokeredMessaging.MessageEntities\SimpleBrokeredMessaging.MessageEntities.csproj", "{418A2D16-2307-4C61-B91F-0D4424180CE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopicsAndSubscriptionsApp", "TopicsAndSubscriptionsApp\TopicsAndSubscriptionsApp.csproj", "{6C0A0F44-0CE7-40D6-B946-A04715F51E77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicsAndSubscriptionsApp", "TopicsAndSubscriptionsApp\TopicsAndSubscriptionsApp.csproj", "{6C0A0F44-0CE7-40D6-B946-A04715F51E77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.Checkout", "SimpleBrokeredMessaging.Checkout\SimpleBrokeredMessaging.Checkout.csproj", "{9904EC18-E8F6-447E-B89B-12AEE5E46E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagReader", "TagReader\TagReader.csproj", "{108AFF4C-7248-41E8-8065-52619EA3E877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagReader.Message", "TagReader.Message\TagReader.Message.csproj", "{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C0A0F44-0CE7-40D6-B946-A04715F51E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9904EC18-E8F6-447E-B89B-12AEE5E46E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9904EC18-E8F6-447E-B89B-12AEE5E46E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9904EC18-E8F6-447E-B89B-12AEE5E46E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9904EC18-E8F6-447E-B89B-12AEE5E46E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108AFF4C-7248-41E8-8065-52619EA3E877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108AFF4C-7248-41E8-8065-52619EA3E877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108AFF4C-7248-41E8-8065-52619EA3E877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108AFF4C-7248-41E8-8065-52619EA3E877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
