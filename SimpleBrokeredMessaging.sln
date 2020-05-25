@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBrokeredMessaging.Mes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicsAndSubscriptionsApp", "TopicsAndSubscriptionsApp\TopicsAndSubscriptionsApp.csproj", "{6C0A0F44-0CE7-40D6-B946-A04715F51E77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBrokeredMessaging.Checkout", "SimpleBrokeredMessaging.Checkout\SimpleBrokeredMessaging.Checkout.csproj", "{9904EC18-E8F6-447E-B89B-12AEE5E46E02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session.Receiver", "SimpleBrokeredMessaging.Checkout\Session.Receiver.csproj", "{9904EC18-E8F6-447E-B89B-12AEE5E46E02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagReader", "TagReader\TagReader.csproj", "{108AFF4C-7248-41E8-8065-52619EA3E877}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session.Sender", "TagReader\Session.Sender.csproj", "{108AFF4C-7248-41E8-8065-52619EA3E877}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagReader.Message", "TagReader.Message\TagReader.Message.csproj", "{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session.Message", "TagReader.Message\Session.Message.csproj", "{D8CE3B29-279E-40E9-89B4-8ADA28F2ED5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
