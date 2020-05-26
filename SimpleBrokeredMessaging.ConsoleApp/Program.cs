@@ -5,7 +5,7 @@ namespace SimpleBrokeredMessaging.ConsoleApp
 {
     class Program
     {//bg-servicebus
-        private static readonly string serviceBusConnectionString = "Endpoint=sb://bg-servicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=H5BpZJ8uCl7VdXZxpCm4WH/gCqDtSDWhwyane+ZWPeQ=";
+        private static readonly string serviceBusConnectionString = "";
         static async Task Main(string[] args)
         {
             var managementHelper = new ManagementHelper(serviceBusConnectionString);

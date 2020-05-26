@@ -8,7 +8,7 @@ namespace TopicsAndSubscriptionsApp
 {
     class Program
     {
-        private static string ServiceBusConnectionString = "Endpoint=sb://bg-servicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=H5BpZJ8uCl7VdXZxpCm4WH/gCqDtSDWhwyane+ZWPeQ=";
+        private static string ServiceBusConnectionString = "";
         private static string OrdersTopicPath = "Orders";
         static async Task Main(string[] args)
         {
