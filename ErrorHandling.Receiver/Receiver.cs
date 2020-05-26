@@ -29,9 +29,10 @@ namespace ErrorHandling.Receiver
             };
             queueClient.RegisterMessageHandler(ProcessMessage, options);
             Utils.WriteLine("Receiving messages", ConsoleColor.Cyan);
+            Console.ReadLine();
         }
 
-        private static async Task ProcessMessage(Message message, CancellationToken arg2)
+        static async Task ProcessMessage(Message message, CancellationToken arg2)
         {
             Utils.WriteLine($"Received: {message.Label}", ConsoleColor.Cyan);
             switch (message.ContentType)
@@ -72,6 +73,7 @@ namespace ErrorHandling.Receiver
         private static async Task ProcessTextMessage(Message message)
         {
             var body = Encoding.UTF8.GetString(message.Body);
+            
             Utils.WriteLine($"Text message {body} Delivery Count: {message.SystemProperties.DeliveryCount}", ConsoleColor.Yellow);
             try
             {
@@ -86,9 +88,13 @@ namespace ErrorHandling.Receiver
             {
                 Utils.WriteLine($"Exception: {mex.Message}", ConsoleColor.Red);
                 //explicit deadlettering
-                await queueClient.DeadLetterAsync(message.SystemProperties.LockToken,
-                    deadLetterReason: "Reason why message failed",
-                    deadLetterErrorDescription: "Some exception detail");
+
+                if (message.SystemProperties.DeliveryCount > 5)
+                {
+                    await queueClient.DeadLetterAsync(message.SystemProperties.LockToken,
+                        deadLetterReason: mex.Message,
+                        deadLetterErrorDescription: mex.ToString());
+                }
             }
         }
 
